@@ -1,0 +1,48 @@
+INDEX >>
+	Página apresentando o sistema.
+
+ADMINISTRATIVO >>
+	Desenvolver painel administrativo >>
+		Informações sobre usuários cadastrados e seus dependentes.
+		Cadastro de avisos.
+		Gerenciamento de integrações API.
+		Gerenciamento de informações de tabelas fixas do BD.
+		Envio de e-mail.
+
+Configurações >>
+	Mudança de Senha
+	Notificações por E-mail
+	Setor de Suporte
+	
+Painel >>
+	Calendário
+
+Barra >>
+	Painel de notificações
+
+
+Correções >>
+	Cadastro de datas de finalização apenas igual ou superior ao já cadastrado.
+	Campos que necessitam de máscara.
+	Limitar textos em locais em que não cabem toda a descrição, como em tabelas.
+	Wallpaper no login e derivados.
+	Change logo.
+	Remover transitions de locais não necessários.
+	Tornar o alterar foto de perfil melhor.
+	Campo repetir senha no cadastro
+	Acentos em BD
+	Corrigir select de tatuagem no editar perfil
+	Corrigir campo de cpf no editar perfil
+	Olhar campo cartão do sus para apenas numero
+	Trocar foto de perfil
+	Corrigir erros de campos
+	Corrigir imagens
+	Remover fonte secundária
+	
+CSS >>
+	Responsividade
+
+SUGESTÕES >>
+	REDIRECIONAMENTO AUTOMÁTICO APÓS CADASTRO
+	BOTÃO CANCELAR EM TELAS DE CADASTRO E AÇÕES
+	BOTÃO VOLTAR EM TELAS DE DETALHES

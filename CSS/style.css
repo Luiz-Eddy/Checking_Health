@@ -1,0 +1,1042 @@
+@import url('fonts.css');
+/* CSS RESET - Limpa todas as formatações padrões do HTML */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* VARIÁVEIS */
+:root{
+	--color-blue: #008cba;
+	--color-blue-dark: #007aa3;
+	--color-blue-light: #00bfff;
+	--color-white: #fff;
+	--color-s-white: #fafafa ;
+	--color-grey: #ccc;
+	--color-grey-dark: #4f4f4f;
+	--color-grey-light: #6d6d6d;
+	--color-black: #000;
+	--color-black-transparent: rgba(0,0,0,0.4);
+	--color-green: #83be4e;
+	--color-yellow: #ffd700;
+	--color-red: #f04a4a;
+	--color-red-light: #f67280;
+	--font-family: 'Baloo Thambi 2', cursive;
+	--text-weight-400: 400;
+	--text-weight-500: 500;
+	--text-weight-600: 600;
+}
+
+/* Fonte do site */
+body{
+	font-family: var(--font-family);
+}
+a{
+	text-decoration: none;
+	color: var(--color-white);
+}
+/* Barra de navegação esquerda */
+.icon-menu{
+	display: none;
+	filter: invert(100);
+	text-align: right;
+}
+.barra{
+	width: 13%;
+	height: 100%;
+	position: fixed;
+	background-image: linear-gradient(var(--color-blue-dark), 	var(--color-blue-light));
+	padding: 5px 20px 20px 20px;
+	color: var(--color-white);
+	transition: 0.5s;
+}
+.topo-barra, .topo-barra img{
+	width: 100%;
+}
+.topo-barra{
+	margin-bottom: 100px;
+	line-height: 15px;
+	font-size: 13px;
+}
+.topo-barra img{
+	border-bottom: 1px var(--color-white) solid;
+}
+.menu ul li{
+	margin-bottom: 15px;
+	padding: 5px 0px;
+	font-size: 18px;
+	text-transform: uppercase;
+	transition: 0.5s;
+	cursor: pointer;
+}
+.menu ul li:hover{
+	padding-left: 5px;
+}
+/* >> Barra do Topo */
+.top-bar{
+	width: 90%;
+	height: 30px;
+	padding: 15px 20px 0px 20px;
+	float: right;
+	text-align: right;
+}
+.top-bar nav ul li{
+	display: inline;
+	margin-right: 20px;
+	cursor: pointer;
+	color: var(--color-grey-light);
+}
+.top-bar nav ul li a{
+	color: var(--color-grey-light);
+	transition: 0.5s;
+}
+.top-bar nav ul li a:hover{
+	color: var(--color-black);
+}
+.top-bar nav ul li:last-child{
+	margin-right: 0px;
+}
+/* ESPAÇO DO CONTEÚDO */
+.conteudo{
+	width: 75%;
+	margin-top: 30px;
+	margin-right: 5%;
+	height: 100%;
+	float: right;
+	clear: both;
+	z-index: 2;
+}
+.conteudo h1{
+	font-size: 40px;
+	font-weight: var(--text-weight-600);
+	color: var(--color-grey-dark);
+}
+/* CARDS */
+/* >> Cards página inicial */
+.cards{
+	width: 100%;
+	margin-top: 30px;
+}
+.card{
+	width: 180px;
+	padding: 15px;
+	height: 80px;
+	background: var(--color-white);
+	box-shadow: 1px 1px 5px var(--color-grey);
+	border-radius: 15px;
+	float: left;
+	margin-right: 15px;
+	transition: 0.3s;
+	border-bottom: 5px var(--color-grey) solid;
+}
+.card:hover{
+	border-bottom: 5px var(--color-blue) solid;
+}
+.card:hover > .card-title{
+	color: var(--color-black);
+}
+.card .card-title{
+	color: var(--color-grey-light);
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	transition: 0.5s;
+}
+.card p small{
+	float: right;
+}
+.card-aviso{
+	width: 300px;
+	height: auto;
+	padding: 20px;
+	border-radius: 20px;
+	margin: 20px 0px;
+	font-size: 16px;
+	color: var(--color-white);
+}
+.atencao{
+	background: var(--color-yellow);
+}
+.alerta{
+	background: var(--color-red);
+}
+/* QUADRO DE AVISOS */
+.avisos{
+	width: 49%;
+	float: left;
+	margin-top: 100px;
+}
+.avisos h3, .info-user h3{
+	font-size: 24px;
+	font-weight: var(--text-weight-600);
+	color: var(--color-grey-dark);
+}
+/* TOAST CADASTRAR */
+.toast-cad-true, .toast-cad-false{
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	background: var(--color-green);
+	padding: 10px;
+	color: var(--color-white);
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px var(--color-grey);
+}
+.toast-cad-false{
+	background: var(--color-red) !important;
+}
+/* INFORMAÇÕES USUÁRIO */
+.info-user{
+	float: left;
+	width: 31%;
+	margin-top: 100px;
+	box-shadow: 0px 0px 5px var(--color-grey);
+	padding: 3%;
+	border-radius: 15px;
+	background: var(--color-white);
+	border-top: 5px var(--color-blue) solid;
+	transition: 0.5s;
+}
+.info-user:hover{
+	border-top: 5px var(--color-blue-light) solid;
+}
+.info-user h3{
+	margin-bottom: 20px;
+}
+.info-user p{
+	line-height: 20px;
+}
+.info-user p span{
+	font-weight: var(--text-weight-600);
+	padding-right: 5px;
+}
+/* BOTÕES */
+.btn{
+	width: auto;
+	height: auto;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	float: right;
+	clear: both;
+	cursor: pointer;
+}
+.btn-padrao{
+	background: var(--color-blue-dark);
+	transition: 0.5s;
+}
+.btn-padrao:hover{
+	background: var(--color-blue);
+}
+.btn-form{
+	background: var(--color-blue-dark);
+	width: 100px !important;
+	height: 40px !important;
+	border: none !important;
+	color: var(--color-white) !important;
+	font-size: 14px;
+	border-radius: 5px !important;
+}
+.btn-login{
+	width: 100px !important;
+	height: 40px !important;
+	border: none !important;
+	color: var(--color-white) !important;
+	font-size: 14px;
+	border-radius: 5px !important;
+	margin-top: 35px;
+}
+.cad-btn, .cad-btn1{
+	float: right;
+	color: var(--color-grey-light);
+	margin-top: 46px;
+	margin-right: 20px;
+	transition: 0.5s;
+}
+.cad-btn1{
+	margin-top: 12px;
+}
+.cad-btn:hover, .btn:hover, .cad-btn1:hover{
+	color: var(--color-black);
+}
+.btn1{
+	color: var(--color-white) !important;
+}
+.btn-calendar{
+	font-family: var(--font-family);
+	width: 100px;
+	height: 30px;
+	background: var(--color-blue-dark);
+	font-size: 16px;
+	color: var(--color-white);
+	font-weight: var(--text-weight-600);
+	border: none;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+.btn-calendar:hover, .btn-calendar-dt:hover{
+	background: var(--color-blue);
+}
+.btn-calendar-dt{
+	height: 30px;
+	background: var(--color-blue-dark);
+	border: none;
+	border-radius: 50px;
+	transition: 0.5s;
+}
+/* TABELA */
+table{
+	width: 100%;
+	height: auto;
+	margin-top: 70px;
+}
+table thead{
+	border-bottom: 1px var(--color-s-white) solid;
+	font-size: 18px;
+	font-weight: var(--text-weight-500);
+	line-height: 28px;
+	background: var(--color-s-white);
+	text-align: left;
+	border-top: 2px var(--color-blue-dark) solid;
+}
+table th{
+	padding: 0px 10px;
+}
+table td{
+	padding: 0px 10px;
+}
+table td img{
+	position: relative;
+	top: 5px;
+}
+table tbody{
+	line-height: 35px;
+	text-align: left;
+}
+table tbody tr{
+	border-bottom: 1px var(--color-s-white) solid;
+}
+table tr td a{
+	color: var(--color-blue-dark);
+}
+/* FORMULÁRIO */
+.cadastro-form{
+	margin-top: 50px;
+	width: 70%;
+}
+.cadastro-form label{
+	display: block;
+	line-height: 50px;
+	font-size: 18px;
+}
+.cadastro-form .select{
+	height: 41px !important;
+	width: 63%;
+}
+.cadastro-form input, .cadastro-form select, .cadastro-form textarea{
+	width: 60%;
+	float: right;
+	height: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px var(--color-grey) solid;
+	outline: none;
+	transition: 0.5s;
+}
+.cadastro-form textarea{
+	height: 60px;
+	margin-bottom: 10px;
+	max-width: 65%;
+}
+/* INPUTS */
+input:focus{
+	border: 1px var(--color-blue-dark) solid !important;
+}
+/* LOGIN */
+.painel{
+	width: 60%;
+	height: 100%;
+	position: fixed;
+	float: left;
+	background-image: url(../IMG/wall_login.jpg);
+	background-size: 130% 100%;
+	text-align: right;
+}
+.painel img{
+	margin: 0% 5% 0% 0%;
+	width: 300px;
+}
+.login{
+	width: 40%;
+	height: 100%;
+	position: fixed;
+	right: 0px;
+	overflow-y: scroll;
+	/*transition: 0.2s;*/
+}
+.bx-login{
+	margin: 60px;
+}
+.bx-login h1{
+	font-size: 40px;
+	font-weight: var(--text-weight-600);
+	color: var(--color-grey-dark);
+}
+.bx-login p{
+	margin-bottom: 50px;
+	text-align: justify;
+}
+.login-form{
+	width: 100%;
+}
+.login-form label{
+	line-height: 50px;
+	font-size: 18px;
+}
+.login-form input{
+	width: 95%;
+	height: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px var(--color-grey) solid;
+	outline: none;
+	transition: 0.5s;
+}
+.logo-login{
+	display: none;
+}
+/* CADASTRO */
+.cad-form label{
+	display: block;
+}
+.cad-form input{
+	width: 55%;
+	float: right;
+	outline: none;
+	transition: 0.5s;
+}
+/* Cronograma de Vacinação */
+.complemento{
+	margin-bottom: 5em;
+}
+.complemento img{
+	width: 30px;
+	float: left;
+}
+.complemento p{
+	float: left;
+	line-height: 32px;
+	padding-left: 10px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+.complemento p:hover{
+	color: var(--color-blue-dark);
+}
+.overlay{
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	background: var(--color-black-transparent);
+	opacity: 0;
+}
+.oc-ov{
+	display: none !important;
+}
+.oc-uv{
+	display: block;
+}
+.cronograma-vac, .modal-vac{
+	width: 50%;
+	height: 400px;
+	background: var(--color-white);
+	margin: 0px auto;
+	top: 5em;
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+	box-shadow: 1px 1px 5px var(--color-grey);
+}
+.close-btn{
+	text-align: right;
+	cursor: pointer;
+}
+.close-btn img{
+	width: 20px;
+}
+.cronograma-vac h2{
+	margin-top: 10px;
+	font-size: 22px;
+	font-weight: var(--text-weight-600);
+}
+.cronograma-vac p{
+	margin-top: 5px;
+}
+.menu-cron{
+	margin-top: 10px;
+	width: 100%;
+	background: var(--color-blue-dark);
+	padding: 6px 0px;
+	text-align: center;
+	border-radius: 5px;
+}
+.menu-cron ul li{
+	display: inline;
+	margin-right: 20px;
+	color: var(--color-white);
+	font-weight: var(--text-weight-500);
+	cursor: pointer;
+}
+.menu-cron ul li:last-child{
+	margin-right: 0px;
+}
+.box-info{
+	margin-top: 20px;
+	text-align: justify;
+	overflow-y: scroll;
+	height: 65%;
+	padding-right: 10px;
+}
+.box-info h3{
+	font-size: 18px;
+	font-weight: var(--text-weight-500);
+}
+.box-info h4{
+	font-size: 18px;
+	color: var(--color-white);
+	margin-top: 10px;
+	font-weight: var(--text-weight-500);
+	background: var(--color-blue-dark);
+	padding: 10px;
+	border-radius: 5px;
+}
+.box-info strong{
+	font-weight: var(--text-weight-500);
+	margin-bottom: 30px;
+}
+.info{
+	margin-top: 20px;
+	border-left: 5px var(--color-blue-dark) solid;
+	padding: 20px;
+	border-radius: 5px;
+	background: var(--color-s-white);
+}
+.bx1, .bx2, .bx3, .bx4, .bx5, .bx6{
+	display: none;
+}
+/* CONFIGURAÇÕES */
+.box-config{
+	margin-top: 3em;
+	width: 100%;
+	background: var(--color-white);
+	padding: 15px;
+	border-top: 5px var(--color-blue-dark) solid; 
+	border-radius: 15px;
+	box-shadow: 0px 0px 2px var(--color-grey);
+	margin-bottom: 3em;
+}
+.box-config h4{
+	font-size: 22px;
+	font-weight: var(--text-weight-500);
+	margin-bottom: 30px;
+}
+.box-config p{
+	line-height: 20px;
+}
+.box-config p strong{
+	font-weight: var(--text-weight-600);
+	margin-right: 5px;
+}
+.box-config-priori{
+	text-align: right;
+	margin-bottom: 30px;
+}
+.box-config-priori p, .box-config-set p{
+	display: inline;
+	margin-left: 30px;
+}
+.profile-photo{
+	float: left;
+	width: 25%;
+	height: 370px;
+	border-radius: 20px;
+	border: 3px var(--color-blue-dark) solid;
+	margin-right: 20px;
+}
+.sec-img{
+	width: 100%;
+	height: 95%;
+	border-top-left-radius: 17px;
+	border-top-right-radius: 17px;
+	transition: 0.5s;
+	text-align: center;
+}
+.sec-img img{
+	width: 100%;
+	max-height: 100%;
+	border-top-left-radius: 17px;
+	border-top-right-radius: 17px;
+}
+.btn-alt-img{
+	width: 100%;
+	height: 5%;
+	background: var(--color-blue-dark);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transition: 0.5s;
+	text-align: center;
+	font-size: 10px;
+	line-height: 22px;
+}
+.btn-alt-img a{
+	color: var(--color-white);
+}
+.profile-photo:hover > .sec-img{
+	height: 93%;
+}
+.profile-photo:hover > .btn-alt-img{
+	height: 7%;
+	line-height: 29px;
+	font-size: 12px;
+}
+.btn-alt-img:hover{
+	background: var(--color-blue);
+	border-bottom-left-radius: 17px;
+	border-bottom-right-radius: 17px;
+}
+.basic-info{
+	float: left;
+	width: 35%;
+	height: 400px;
+}
+.basic-info h1{
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: var(--color-black);
+}
+.basic-info hr{
+	height: 0px;
+}
+.rapid-action{
+	float: left;
+	width: 30%;
+	height: 370px;
+	padding: 2%;
+}
+.box-rapid-info{
+	width: 120px;
+	height: 120px;
+	float: left;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px var(--color-grey);
+	margin-right: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.box-rapid-info p{
+	margin-top: 10px;
+	font-size: 12px;
+}
+.box-rapid-info h1{
+	font-size: 22px;
+	line-height: 80px;
+}
+.sangue, .fumante, .bebida, .tatto{
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: 250% 180%;
+}
+.sangue{
+	background-image: url("../IMG/sangue.png");
+}
+.fumante{
+	background-image: url("../IMG/cigarro.png");
+}
+.bebida{
+	background-image: url("../IMG/cerveja.png");
+	background-position: 300% 180%;
+}
+.tatto{
+	background-image: url("../IMG/tatto.png");
+	background-size: 90% 60%;
+	background-position: 420% 130%;
+}
+.box-config-set{
+	width: 100%;
+}
+.sec1, .sec2, .sec3{
+	float: left;
+	width: 30%;
+	height: auto;
+	margin-bottom: 30px;
+	padding: 20px 15px;
+	border-top: 1px var(--color-grey) solid;
+}
+.sec1 h1, .sec2 h1, .sec3 h1{
+	font-size: 22px;
+	color: var(--color-black);
+}
+.sec1 p, .sec2 p, .sec3 p{
+	text-align: left;
+	margin-left: 0px;
+}
+/* INFORMAÇÕES DO EXAME */
+.info-ex-1, .info-ex-2{
+	margin-top: 30px;
+	float: left;
+	min-height: 250px;
+	height: auto;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px var(--color-grey);
+	padding: 30px;
+}
+.info-ex-1{
+	width: 60%;
+	margin-right: 10px;
+}
+.info-ex-1 h1{
+	font-size: 20px;
+	font-weight: var(--text-weight-600);
+	margin-bottom: 30px;
+}
+.info-ex-1 h2{
+	font-size: 16px;
+	font-weight: var(--text-weight-600);
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+.info-ex-1 h2:first-child{
+	margin-top: 0px;
+}
+.info-ex-2{
+	width: 20%;
+	text-align: center;
+}
+.info-ex-2 img{
+	width: 60%;
+	margin-bottom: 23%;
+	margin-top: 20px;
+}
+.info-ex-2 p{
+	line-height: 20px;
+}
+.info-ex-2 a{
+	text-decoration: underline;
+	transition: 0.5s;
+	color: var(--color-black);
+}
+.info-ex-2 a:hover{
+	color: var(--color-blue-dark);
+}
+.info-ex-3{
+	width: 92%;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px var(--color-grey);
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 3em;
+}
+.info-ex-3 table{
+	margin-top: 5px;
+}
+.down-table{
+	height: 20px;
+}
+.info-ex-3 h1{
+	font-size: 20px;
+	font-weight: var(--text-weight-600);
+	margin: 10px;
+	text-align: center;
+}
+.ex-btn{
+	margin-right: 7%;
+}
+.excluir_exame, .editar_exame{
+	float: right;
+	height: 36px;
+	width: 36px;
+	background: var(--color-red-light);
+	border-radius: 5px;
+	margin-right: 10px;
+	line-height: 36px;
+	text-align: center;
+	color: var(--color-white);
+	transition: 0.3s;
+}
+.editar_exame{
+	background: var(--color-blue-dark) !important;
+	line-height: 42px;
+}
+.editar_exame img{
+	width: 15px;
+	filter: invert(100);
+}
+.excluir_exame a, .editar_exame a{
+	display: none;
+	transition: 1s;
+	color: transparent;
+}
+.excluir_exame:hover, .editar_exame:hover{
+	width: 150px;
+}
+.editar_exame:hover{
+	line-height: 36px;
+}
+.excluir_exame p{
+	font-size: 18px;
+	font-weight: bold;
+}
+.excluir_exame:hover > p, .editar_exame:hover img{
+	display: none;
+}
+.excluir_exame:hover > a, .editar_exame:hover a{
+	display: block;
+}
+.excluir_exame a:hover, .editar_exame:hover a:hover{
+	color: var(--color-white);
+}
+/* Link */
+.extern{
+	width: 17px;
+	opacity: 0.5;
+	float: right;
+	transition: 0.5s;
+}
+.extern:hover{
+	opacity: 1;
+}
+/* Sem Cadastros */
+.sem-resultado{
+	margin-top: 5em;
+	text-align: center;
+}
+.sem-resultado img{
+	width: 200px;
+	opacity: 0.2;
+}
+.sem-resultado h3{
+	margin-top: 3em;
+	font-size: 18px;
+	font-weight: 500;
+}
+/* UPLOAD PROFILE PHOTO */
+.profile-h1{
+	font-size: 18px;
+	margin: 20px 0px;
+}
+/* LOGIN RESPONSIVE */
+@media screen and (max-width: 900px){
+	.painel{
+		display: none;
+	}
+	.login{
+		width: 100%;
+	}
+	.logo-login{
+		display: initial;
+		width: 150px;
+		margin-bottom: 30px; 
+	}
+	.login a{
+		font-size: 14px;
+	}
+	.login-btn{
+		text-align: center;
+		margin-top: 8em;
+	}
+	.cad-btn{
+		float: initial;
+	}
+	.login h1{
+		font-size: 34px;
+	}
+	.beta-card{
+		width: 80% !important;
+	}
+}
+/* BARRA RESPONSIVE */
+@media screen and (max-width: 900px){
+	.over{
+		opacity: 0;
+	}
+	.icon-menu{
+		display: block;
+		margin: 5px 0px 0px -15px;
+	}
+	.topo-barra{
+		margin-bottom: 50px;
+	}
+	.barra_min{
+		width: 0px !important;
+		padding: 4% !important;
+	}
+	.barra_min_pad{
+		width: 45% !important;
+	}
+	.oc-uv{
+		display: none;
+	}
+}
+/* CONTENT RESPONSIVE */
+@media screen and (max-width: 900px){
+	.conteudo{
+		width: 80%;
+	}
+	.conteudo h1{
+		text-align: center;
+		font-size: 32px;
+	}
+	.min-center{
+		text-align: center;
+	}
+	.cards{
+		overflow-x: scroll;
+		margin-top: 50px;
+		scrollbar-width: thin;
+		scrollbar-color: transparent transparent;
+	}
+	.card{
+		margin-bottom: 10px;
+	}
+	.min-cards{
+		width: 900px;
+		padding: 10px 1px 10px 1px;
+	}
+	.avisos{
+		float: initial;
+		width: 90%;
+		margin-top: 50px;
+	}
+	.card-aviso{
+		width: 90%;
+	}
+	.info-user{
+		float: initial;
+		width: 85%;
+		margin-top: 50px;
+		margin-bottom: 3em;
+		padding: 6%;
+	}
+	.extern{
+		float: initial;
+	}
+	.txt-r{
+		text-align: right;
+	}
+}
+
+/* CONFIGURAÇÃO RESPONSIVE */
+@media screen and (max-width: 900px){
+	.box-config{
+		width: 90%;
+	}
+	.box-config-priori p{
+		display: block;
+	}
+	.profile-photo{
+		float: initial;
+		width: 100%;
+		height: 430px;
+		margin-bottom: 1em;
+	}
+	.basic-info{
+		float: initial;
+		width: 100%;
+		height: auto;
+		margin-bottom: 1em;
+	}
+	.rapid-action{
+		float: initial;
+		display: inline;
+		width: 100%;
+	}
+	.box-rapid-info{
+		float: initial;
+		width: 100%;
+	}
+	.sec1, .sec2, .sec3{
+		float: initial;
+		width: 90%;
+	}
+	.sangue, .fumante, .bebida, .tatto{
+		background-size: 40% 90%;
+		background-position: 120% 290%;
+	}
+	.tatto{
+		background-size: 50% 90%;
+		background-position: 130% 290%;
+	}
+	.box-config-set h1{
+		font-size: 24px;
+	}
+}
+
+/* FORM RESPONSIVE */
+@media screen and (max-width: 900px){
+	.cadastro-form{
+		width: 100%;
+		margin-bottom: 3em !important;
+	}
+	.cadastro-form label{
+		font-size: 14px;
+	}
+	.cadastro-form input, .cadastro-form textarea{
+		width: 50%;
+	}
+	.cadastro-form select{
+		width: 45% !important;
+	}
+}
+
+/*BETA CARD*/
+.beta-card{
+	margin: 10em auto 2em auto;
+	width: 80%;
+	background: var(--color-red-light);
+	padding: 10px;
+	border-radius: 5px;
+	color: var(--color-white);
+	box-shadow: 0px 1px 10px var(--color-red-light);
+}
+@media screen and (max-width: 900px){
+	.beta-card{
+		margin: 5em auto 2em auto;
+	}
+}
